@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>genre</key>
+		<string>Action</string>
+		<key>movies</key>
+		<array>
+			<string>Black Panther</string>
+			<string>Avengers: Endgame</string>
+			<string>Mad Max: Fury Road</string>
+			<string>Spider-Man: Into The Spider-Verse</string>
+			<string>Wonder Woman</string>
+		</array>
+	</dict>
+	<dict>
+		<key>genre</key>
+		<string>Romance</string>
+		<key>movies</key>
+		<array>
+			<string>Your Name</string>
+			<string>The Big Sick</string>
+			<string>The Notebook</string>
+			<string>The Shape of Water</string>
+			<string>Call Me by Your Name</string>
+		</array>
+	</dict>
+	<dict>
+		<key>genre</key>
+		<string>Sci-fi</string>
+		<key>movies</key>
+		<array>
+			<string>E.T. </string>
+			<string>Gravity</string>
+			<string>War For tthe Planet of the Apes</string>
+			<string>Starwars</string>
+			<string>Startrek</string>
+		</array>
+	</dict>
+	<dict>
+		<key>genre</key>
+		<string>Horror</string>
+		<key>movies</key>
+		<array>
+			<string>Annabelle</string>
+			<string>Get Out</string>
+			<string>A Quiet Place</string>
+			<string>The Lighthouse</string>
+			<string>It</string>
+		</array>
+	</dict>
+</array>
+</plist>
