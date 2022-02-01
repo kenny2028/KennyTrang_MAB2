@@ -7,6 +7,9 @@
 
 import UIKit
 
+//Sub class UITableviewcontroller cocotouch class
+//Stub methods are provided as result
+
 class SearchResultsVC: UITableViewController, UISearchResultsUpdating {
     
     
@@ -17,10 +20,9 @@ class SearchResultsVC: UITableViewController, UISearchResultsUpdating {
     
     
     
-    
     func updateSearchResults(for searchController: UISearchController) {
         let searchString = searchController.searchBar.text
-//        just remove jsut incase you already did one search before
+//        just remove just incase you already did one search before
         filterwords.removeAll(keepingCapacity: true)
         if searchString?.isEmpty == false {
             let searchfilter: (String) -> Bool = {name in
@@ -34,6 +36,7 @@ class SearchResultsVC: UITableViewController, UISearchResultsUpdating {
             filterwords.append(contentsOf: matches)
         }
         tableView.reloadData()
+//        pretty expensive call be careful (recalls delagates and methods)
 //        you can call reload data to reload the table view 
         
         
@@ -57,24 +60,37 @@ class SearchResultsVC: UITableViewController, UISearchResultsUpdating {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+//        number of sections return
+        
+        
+        
+        
         // #warning Incomplete implementation, return the number of sections
-        return 0
+//        return 0
+        return 1
+//        take out return 0
     }
 
+    
+//    Only one list of search results
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return filterwords.count
     }
 
-    /*
+    
+    
+//    Draws and creates the cell, always needed
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScrabbleCell", for: indexPath)
 
-        // Configure the cell...
-
+        var cellconfig = cell.defaultContentConfiguration()
+        cellconfig.text = filterwords[indexPath.row]
+        
+        cell.contentConfiguration = cellconfig
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

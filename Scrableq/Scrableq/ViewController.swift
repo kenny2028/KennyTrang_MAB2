@@ -12,12 +12,36 @@ class ViewController: UITableViewController {
     var words = [String]()
     var data = DataLoader()
     let wordFile = "qwordswithoutu1"
+    
+    var searchController = UISearchController() // Makeing a search ocntroller
 
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         data.loadData(fileName: wordFile)
         words = data.getWords()
+        
+        
+        // Search controller
+//        make search controller
+        let resultController =  SearchResultsVC()
+        resultController.allwords = words // set the allwords property to our words array
+        
+        searchController = UISearchController(searchResultsController: resultController) // Create search controller and add result controller parameter
+        
+        //configure search bar
+        searchController.searchBar.placeholder = "Enter a search term"
+        searchController.searchBar.sizeToFit()//Makes the searchbar the width of table
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchResultsUpdater = resultController // Set to Controller of result
+        
+        
         
     }
     
@@ -52,7 +76,7 @@ class ViewController: UITableViewController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
-        tableView.deselectRow(at: <#T##IndexPath#>, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
