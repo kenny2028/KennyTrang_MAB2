@@ -17,6 +17,8 @@
 		E44A9F7127B329600081522E /* animalsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7027B329600081522E /* animalsData.swift */; };
 		E44A9F7327B329C30081522E /* dataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7227B329C30081522E /* dataLoader.swift */; };
 		E44A9F7527B331140081522E /* AnimalTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7427B331140081522E /* AnimalTVController.swift */; };
+		E4CA34FE27B3534A0057EAB6 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA34FD27B3534A0057EAB6 /* AddAnimalViewController.swift */; };
+		E4CA350027B35E600057EAB6 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA34FF27B35E600057EAB6 /* SearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E44A9F7027B329600081522E /* animalsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalsData.swift; sourceTree = "<group>"; };
 		E44A9F7227B329C30081522E /* dataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataLoader.swift; sourceTree = "<group>"; };
 		E44A9F7427B331140081522E /* AnimalTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTVController.swift; sourceTree = "<group>"; };
+		E4CA34FD27B3534A0057EAB6 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalViewController.swift; sourceTree = "<group>"; };
+		E4CA34FF27B35E600057EAB6 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 				E44A9F5827B3270C0081522E /* AppDelegate.swift */,
 				E44A9F5A27B3270C0081522E /* SceneDelegate.swift */,
 				E44A9F5E27B3270C0081522E /* Main.storyboard */,
+				E4CA34FD27B3534A0057EAB6 /* AddAnimalViewController.swift */,
 				E44A9F7427B331140081522E /* AnimalTVController.swift */,
+				E4CA34FF27B35E600057EAB6 /* SearchController.swift */,
 				E44A9F7027B329600081522E /* animalsData.swift */,
 				E44A9F7227B329C30081522E /* dataLoader.swift */,
 				E44A9F6E27B3288F0081522E /* animals.plist */,
@@ -154,9 +160,11 @@
 				E44A9F7327B329C30081522E /* dataLoader.swift in Sources */,
 				E44A9F5927B3270C0081522E /* AppDelegate.swift in Sources */,
 				E44A9F6D27B327FD0081522E /* TableViewController.swift in Sources */,
+				E4CA350027B35E600057EAB6 /* SearchController.swift in Sources */,
 				E44A9F7527B331140081522E /* AnimalTVController.swift in Sources */,
 				E44A9F5B27B3270C0081522E /* SceneDelegate.swift in Sources */,
 				E44A9F7127B329600081522E /* animalsData.swift in Sources */,
+				E4CA34FE27B3534A0057EAB6 /* AddAnimalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

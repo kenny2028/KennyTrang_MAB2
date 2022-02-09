@@ -1,5 +1,5 @@
 //
-//  AnimalTVController.swift
+//  SearchController.swift
 //  lab3
 //
 //  Created by Kenny Trang on 2/8/22.
@@ -7,70 +7,47 @@
 
 import UIKit
 
-class AnimalTVController: UITableViewController{
+class TableSearchController: UITableViewController,UISearchResultsUpdating {
     
-
-    
-    
-    var selectedAnimalTypeKey = 0
-    var loadAnimalData = dataLoader()
-    var animalList = [String]()
+    var allwords = [String]()
+    var filteredWords = [String]()
     var cellIdentifier = "animalCell"
     
-    var SearchController = UISearchController()
     
-    let doneSegue = "doneSegue"
-    let cancelSegue = "cancelSegue"
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchString = searchController.searchBar.text
+        
+        filteredWords.removeAll(keepingCapacity: true)
+        
+        if searchString?.isEmpty == false {
+            
+            let searchfilter: (String) -> Bool = { name in
+                
+                let range = name.range(of: searchString!, options: .caseInsensitive)
+                
+                return range != nil
+            }
+            
+            let matches = allwords.filter(searchfilter)
+            filteredWords.append(contentsOf: matches)
+        
+            
+            
+            
+        }
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        animalList = loadAnimalData.getAnimals(index: selectedAnimalTypeKey)
-        
-        let resultsController = TableSearchController()
-        resultsController.allwords = animalList
-        SearchController = UISearchController(searchResultsController: resultsController)
-        
-        SearchController.searchBar.placeholder = "Enter The Name of an Animal"
-        SearchController.searchBar.sizeToFit()
-        
-        tableView.tableHeaderView=SearchController.searchBar
-        SearchController.searchResultsUpdater = resultsController
-        
-    }
-    
-    
-    
-    
-    //MARK: Segue Connections
-    @IBAction func unwindSegue(_ segue:UIStoryboardSegue){
-        if segue.identifier == doneSegue {
-            if let source = segue.source as? AddAnimalViewController {
-                if source.addAnimal.isEmpty == false {
-                    loadAnimalData.addAnimal(index: selectedAnimalTypeKey, newIndex: animalList.count, newAnimal: source.addAnimal)
-                    
-                    animalList.append(source.addAnimal)
-                    tableView.reloadData()
-                    
-                    
-                }
-            }
-        }
-        
-    }
-    
-    
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        animalList = loadAnimalData.getAnimals(index: selectedAnimalTypeKey)
     }
 
     // MARK: - Table view data source
@@ -82,7 +59,7 @@ class AnimalTVController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return animalList.count
+        return filteredWords.count
     }
 
     
@@ -90,53 +67,41 @@ class AnimalTVController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
         // Configure the cell...
+        
         var cellconfig = cell.defaultContentConfiguration()
-        cellconfig.text = animalList[indexPath.row]
+        cellconfig.text = filteredWords[indexPath.row]
         cell.contentConfiguration = cellconfig
         
         return cell
     }
     
 
-    
+    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
+    */
 
-    
+    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            animalList.remove(at: indexPath.row) //delete from array
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            //delete from model DAta Class
-            loadAnimalData.deleteAnimal(index: selectedAnimalTypeKey, animalPosition: indexPath.row)
-            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
+    */
 
-    
+    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let fromRow = fromIndexPath.row
-        let toRow = to.row
-        let movedAnimal = animalList[fromRow]
-        
-        //swap at array
-        animalList.swapAt(fromRow, toRow)
-        
-        loadAnimalData.deleteAnimal(index: selectedAnimalTypeKey, animalPosition: fromRow)
-        loadAnimalData.addAnimal(index: selectedAnimalTypeKey, newIndex: toRow, newAnimal: movedAnimal)
-        
+
     }
-    
+    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -156,5 +121,4 @@ class AnimalTVController: UITableViewController{
     }
     */
 
-    
 }

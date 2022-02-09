@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,11 +63,79 @@
                             <outlet property="delegate" destination="RCa-D8-dI7" id="yH5-V5-WiE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9Xg-El-zxb"/>
+                    <navigationItem key="navigationItem" id="9Xg-El-zxb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XjK-YB-UZV">
+                            <connections>
+                                <segue destination="7ga-BM-ash" kind="presentation" id="xff-TV-Jle"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6x-Wg-1Gu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1461" y="7"/>
+        </scene>
+        <!--Add Animal View Controller-->
+        <scene sceneID="4xZ-Bb-wVs">
+            <objects>
+                <viewController id="7ga-BM-ash" customClass="AddAnimalViewController" customModule="lab3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SKk-hP-Xfc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXm-iI-ne9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Add an Animal" id="OO1-Ki-dLb">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="zXW-7w-fVB">
+                                            <connections>
+                                                <segue destination="jqX-Tk-Gh3" kind="unwind" identifier="cancelSegue" unwindAction="unwindSegue:" id="AHj-Dy-WHv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="NbO-LV-WvE">
+                                            <connections>
+                                                <segue destination="jqX-Tk-Gh3" kind="unwind" identifier="doneSegue" unwindAction="unwindSegue:" id="4iM-P1-vFl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="g1p-hj-7eG">
+                                <rect key="frame" x="0.0" y="258" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your own animal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0F-hN-NgY">
+                                        <rect key="frame" x="91.5" y="0.0" width="231" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1X-0g-Uj7">
+                                        <rect key="frame" x="142" y="56" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xcH-tp-AnM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g1p-hj-7eG" firstAttribute="leading" secondItem="xcH-tp-AnM" secondAttribute="leading" id="94K-uq-qLr"/>
+                            <constraint firstItem="cXm-iI-ne9" firstAttribute="top" secondItem="xcH-tp-AnM" secondAttribute="top" id="9ao-18-3z0"/>
+                            <constraint firstItem="xcH-tp-AnM" firstAttribute="trailing" secondItem="g1p-hj-7eG" secondAttribute="trailing" id="ANg-lp-B95"/>
+                            <constraint firstItem="g1p-hj-7eG" firstAttribute="top" secondItem="cXm-iI-ne9" secondAttribute="bottom" constant="202" id="qUd-5f-AjE"/>
+                            <constraint firstItem="cXm-iI-ne9" firstAttribute="trailing" secondItem="xcH-tp-AnM" secondAttribute="trailing" id="r5F-Bu-V1Y"/>
+                            <constraint firstItem="cXm-iI-ne9" firstAttribute="leading" secondItem="xcH-tp-AnM" secondAttribute="leading" id="uC8-KN-Rxm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalTextField" destination="T1X-0g-Uj7" id="NvO-6r-XhS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2y-WS-Zvq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jqX-Tk-Gh3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2327.536231884058" y="8.0357142857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iKI-O5-Hdf">
