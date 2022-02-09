@@ -101,7 +101,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="g1p-hj-7eG">
-                                <rect key="frame" x="0.0" y="258" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your own animal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0F-hN-NgY">
                                         <rect key="frame" x="91.5" y="0.0" width="231" height="30"/>
@@ -120,10 +120,10 @@
                         <viewLayoutGuide key="safeArea" id="xcH-tp-AnM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g1p-hj-7eG" firstAttribute="leading" secondItem="xcH-tp-AnM" secondAttribute="leading" id="94K-uq-qLr"/>
                             <constraint firstItem="cXm-iI-ne9" firstAttribute="top" secondItem="xcH-tp-AnM" secondAttribute="top" id="9ao-18-3z0"/>
-                            <constraint firstItem="xcH-tp-AnM" firstAttribute="trailing" secondItem="g1p-hj-7eG" secondAttribute="trailing" id="ANg-lp-B95"/>
-                            <constraint firstItem="g1p-hj-7eG" firstAttribute="top" secondItem="cXm-iI-ne9" secondAttribute="bottom" constant="202" id="qUd-5f-AjE"/>
+                            <constraint firstItem="g1p-hj-7eG" firstAttribute="top" secondItem="cXm-iI-ne9" secondAttribute="bottom" constant="20" id="LbS-sG-AVF"/>
+                            <constraint firstItem="xcH-tp-AnM" firstAttribute="trailing" secondItem="g1p-hj-7eG" secondAttribute="trailing" id="TNk-lm-eji"/>
+                            <constraint firstItem="g1p-hj-7eG" firstAttribute="leading" secondItem="xcH-tp-AnM" secondAttribute="leading" id="iHs-E5-IvY"/>
                             <constraint firstItem="cXm-iI-ne9" firstAttribute="trailing" secondItem="xcH-tp-AnM" secondAttribute="trailing" id="r5F-Bu-V1Y"/>
                             <constraint firstItem="cXm-iI-ne9" firstAttribute="leading" secondItem="xcH-tp-AnM" secondAttribute="leading" id="uC8-KN-Rxm"/>
                         </constraints>
