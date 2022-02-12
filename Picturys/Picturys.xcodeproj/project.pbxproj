@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E42018B627B75C850019B533 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42018B527B75C850019B533 /* UploadViewController.swift */; };
+		E42018BA27B75E4E0019B533 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = E42CD43127B468CA00342AB4 /* fonts */; };
 		E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42CD41927B463C400342AB4 /* AppDelegate.swift */; };
 		E42CD41C27B463C400342AB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42CD41B27B463C400342AB4 /* SceneDelegate.swift */; };
 		E42CD42127B463C400342AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42CD41F27B463C400342AB4 /* Main.storyboard */; };
 		E42CD42327B463C500342AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42CD42227B463C500342AB4 /* Assets.xcassets */; };
 		E42CD42627B463C500342AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */; };
-		E42CD43227B468CA00342AB4 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = E42CD43127B468CA00342AB4 /* fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E42018B527B75C850019B533 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		E42CD41627B463C400342AB4 /* Picturys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picturys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42CD41927B463C400342AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E42CD41B27B463C400342AB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				E42CD41927B463C400342AB4 /* AppDelegate.swift */,
 				E42CD41B27B463C400342AB4 /* SceneDelegate.swift */,
 				E42CD41F27B463C400342AB4 /* Main.storyboard */,
+				E42018B527B75C850019B533 /* UploadViewController.swift */,
 				E42CD42227B463C500342AB4 /* Assets.xcassets */,
 				E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */,
 				E42CD43127B468CA00342AB4 /* fonts */,
@@ -128,7 +131,7 @@
 				E42CD42627B463C500342AB4 /* LaunchScreen.storyboard in Resources */,
 				E42CD42327B463C500342AB4 /* Assets.xcassets in Resources */,
 				E42CD42127B463C400342AB4 /* Main.storyboard in Resources */,
-				E42CD43227B468CA00342AB4 /* fonts in Resources */,
+				E42018BA27B75E4E0019B533 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */,
+				E42018B627B75C850019B533 /* UploadViewController.swift in Sources */,
 				E42CD41C27B463C400342AB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

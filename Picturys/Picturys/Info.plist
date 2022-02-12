@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>ArchivoBlack-Regular</string>
-		<string>ArchivoNarrow</string>
+		<string>ArchivoBlack-Regular.ttf</string>
+		<string>ArchivoNarrow.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -26,5 +26,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please Allow &quot;Picturys&quot; Access to your Gallery for Images</string>
 </dict>
 </plist>
