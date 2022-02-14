@@ -13,12 +13,12 @@
 		E44A9F6227B327120081522E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44A9F6127B327120081522E /* Assets.xcassets */; };
 		E44A9F6527B327120081522E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44A9F6327B327120081522E /* LaunchScreen.storyboard */; };
 		E44A9F6D27B327FD0081522E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F6C27B327FD0081522E /* TableViewController.swift */; };
-		E44A9F6F27B3288F0081522E /* animals.plist in Resources */ = {isa = PBXBuildFile; fileRef = E44A9F6E27B3288F0081522E /* animals.plist */; };
 		E44A9F7127B329600081522E /* animalsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7027B329600081522E /* animalsData.swift */; };
 		E44A9F7327B329C30081522E /* dataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7227B329C30081522E /* dataLoader.swift */; };
 		E44A9F7527B331140081522E /* AnimalTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44A9F7427B331140081522E /* AnimalTVController.swift */; };
 		E4CA34FE27B3534A0057EAB6 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA34FD27B3534A0057EAB6 /* AddAnimalViewController.swift */; };
 		E4CA350027B35E600057EAB6 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CA34FF27B35E600057EAB6 /* SearchController.swift */; };
+		E4E6436827BADCA900BDE062 /* animals.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E6436727BADCA900BDE062 /* animals.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		E44A9F6427B327120081522E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E44A9F6627B327120081522E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44A9F6C27B327FD0081522E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		E44A9F6E27B3288F0081522E /* animals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = animals.plist; path = "../../Spring22_AdvMobileAppDev-main/sample data/animals.plist"; sourceTree = "<group>"; };
 		E44A9F7027B329600081522E /* animalsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalsData.swift; sourceTree = "<group>"; };
 		E44A9F7227B329C30081522E /* dataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataLoader.swift; sourceTree = "<group>"; };
 		E44A9F7427B331140081522E /* AnimalTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTVController.swift; sourceTree = "<group>"; };
 		E4CA34FD27B3534A0057EAB6 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnimalViewController.swift; sourceTree = "<group>"; };
 		E4CA34FF27B35E600057EAB6 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		E4E6436727BADCA900BDE062 /* animals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = animals.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +76,11 @@
 				E4CA34FF27B35E600057EAB6 /* SearchController.swift */,
 				E44A9F7027B329600081522E /* animalsData.swift */,
 				E44A9F7227B329C30081522E /* dataLoader.swift */,
-				E44A9F6E27B3288F0081522E /* animals.plist */,
 				E44A9F6C27B327FD0081522E /* TableViewController.swift */,
 				E44A9F6127B327120081522E /* Assets.xcassets */,
 				E44A9F6327B327120081522E /* LaunchScreen.storyboard */,
 				E44A9F6627B327120081522E /* Info.plist */,
+				E4E6436727BADCA900BDE062 /* animals.plist */,
 			);
 			path = lab3;
 			sourceTree = "<group>";
@@ -143,9 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E6436827BADCA900BDE062 /* animals.plist in Resources */,
 				E44A9F6527B327120081522E /* LaunchScreen.storyboard in Resources */,
 				E44A9F6227B327120081522E /* Assets.xcassets in Resources */,
-				E44A9F6F27B3288F0081522E /* animals.plist in Resources */,
 				E44A9F6027B3270C0081522E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
