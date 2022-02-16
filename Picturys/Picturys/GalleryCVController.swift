@@ -30,7 +30,11 @@ class GalleryCVController: UICollectionViewController {
         }
         
         
-        collectionView.reloadData()
+        
+        collectionView.collectionViewLayout = generateLayout()
+        
+        
+        //collectionView.reloadData(
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -69,17 +73,6 @@ class GalleryCVController: UICollectionViewController {
 
     }
 
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCVCell
-//
-//        // Configure the cell
-//
-//        let image = allImageData[indexPath.row].picture
-//        cell.showImage.image = image
-//
-//
-//        return cell
-//    }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
@@ -90,6 +83,42 @@ class GalleryCVController: UICollectionViewController {
         return cell
     }
 
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var header = CollectionRV()
+        if kind == UICollectionView.elementKindSectionHeader{
+            header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "photoheader", for: indexPath) as! CollectionRV
+            header.headerlabel.text = allImageData[indexPath.row].month
+            header.headerlabel.text = "OOGABOOGA"
+        }
+        return header
+    }
+    
+    
+    //MARK: CollectionView Layout
+    
+    func generateLayout() -> UICollectionViewLayout {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let photoItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        photoItem.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 2, bottom: 0, trailing: 2)
+        let groupsize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.1))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupsize, subitem: photoItem, count: 4)
+        let section = NSCollectionLayoutSection(group: group)
+        //Header
+        let headersize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headersize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [sectionHeader]
+        
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        
+ 
+        
+        return layout
+    }
     
 
     // MARK: UICollectionViewDelegate

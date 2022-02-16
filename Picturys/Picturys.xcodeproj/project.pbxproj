@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E401E01A27BCA87D0072C2BF /* CollectionRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401E01927BCA87D0072C2BF /* CollectionRV.swift */; };
 		E408396F27BB68DE001D8523 /* pictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408396E27BB68DE001D8523 /* pictureData.swift */; };
 		E42018B627B75C850019B533 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42018B527B75C850019B533 /* UploadViewController.swift */; };
 		E42018BA27B75E4E0019B533 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = E42CD43127B468CA00342AB4 /* fonts */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E401E01927BCA87D0072C2BF /* CollectionRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRV.swift; sourceTree = "<group>"; };
 		E408396E27BB68DE001D8523 /* pictureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pictureData.swift; sourceTree = "<group>"; };
 		E42018B527B75C850019B533 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		E42CD41627B463C400342AB4 /* Picturys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picturys.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 				E49A503427BC873000A1C0FE /* GalleryCVController.swift */,
 				E49A503627BC877C00A1C0FE /* GalleryCell.swift */,
 				E42018B527B75C850019B533 /* UploadViewController.swift */,
+				E401E01927BCA87D0072C2BF /* CollectionRV.swift */,
 				E42CD42227B463C500342AB4 /* Assets.xcassets */,
 				E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */,
 				E42CD43127B468CA00342AB4 /* fonts */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49A503527BC873000A1C0FE /* GalleryCVController.swift in Sources */,
+				E401E01A27BCA87D0072C2BF /* CollectionRV.swift in Sources */,
 				E49A503727BC877C00A1C0FE /* GalleryCell.swift in Sources */,
 				E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */,
 				E42018B627B75C850019B533 /* UploadViewController.swift in Sources */,
