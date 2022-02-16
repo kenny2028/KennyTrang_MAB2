@@ -11,11 +11,29 @@ class DetailViewController: UIViewController {
     
     var importingImage = pictureData()
     
+    @IBOutlet weak var imageShow: UIImageView!
     
-
+    @IBOutlet weak var tagsLabel: UILabel!
+    
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        imageShow.image = importingImage.picture
+        tagsLabel.text = importingImage.imagetags
+        dateLabel.text = importingImage.date
+        
+        //add to show favorite
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageShow.image = importingImage.picture
+        tagsLabel.text = importingImage.imagetags
+        dateLabel.text = importingImage.date
         // Do any additional setup after loading the view.
     }
     

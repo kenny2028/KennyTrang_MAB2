@@ -66,6 +66,22 @@ class GalleryCVController: UICollectionViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let source = segue.destination as? DetailViewController {
+                if let indexPath = collectionView.indexPath(for: (sender as? UICollectionViewCell)!) {
+                    source.importingImage = allImageData[indexPath.row]
+                    
+//                    let alert = UIAlertController(title: "Entry Added", message: "Date:\(source.importingImage.date) Favorite: \(source.importingImage.favorited) Tags: \(source.importingImage.imagetags) \(source.importingImage.picture) ", preferredStyle: .alert)
+//                    
+//                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//                                self.present(alert, animated: true)
+                }
+            }
+            
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

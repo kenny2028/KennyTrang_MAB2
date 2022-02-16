@@ -32,8 +32,9 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
             //prepare for sending
             sendingImage = pictureData(picture: imageAdd!, imagetags: tagsTextField.text!, favorited: favoritePressed, date: dateLabel.text!, month: dateLabel.text!)
+        print(sendingImage)
             
-//            
+//
 //            let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text) \(imageAdd) ", preferredStyle: .alert)
 //
 //            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
