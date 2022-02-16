@@ -18,6 +18,8 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     @IBOutlet weak var uploadedImage: UIImageView!
     
+    var imageAdd: UIImage?
+    
     
     
     
@@ -26,9 +28,10 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     @IBAction func addEntryPressed(_ sender: Any) {
         
-        
+  
+            
         //TESTING
-        let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text) \(imageAdd) ", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
@@ -72,10 +75,12 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+   
+    
       
         if let selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")]as? UIImage {
             uploadedImage.image = selectedImage
+            imageAdd = selectedImage
         }
         
         picker.dismiss(animated: true, completion: nil)

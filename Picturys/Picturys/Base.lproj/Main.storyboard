@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -176,37 +177,93 @@
             <point key="canvasLocation" x="518.84057971014499" y="160.71428571428569"/>
         </scene>
         <!--Favorites-->
-        <scene sceneID="6o8-H4-c3s">
+        <scene sceneID="1RN-Ef-eU7">
             <objects>
-                <viewController id="5BO-DW-675" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4e8-VB-k8t">
+                <collectionViewController id="5YT-Oh-F6A" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="S31-f9-8B9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ZNq-j7-1Ei"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.leadinghalf.filled" catalog="system" id="fDZ-bh-T0T"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9q3-Dg-sQz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hF3-Bw-RWK">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mte-9T-nvj">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cJe-HV-GOP">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5YT-Oh-F6A" id="dAa-RY-GS0"/>
+                            <outlet property="delegate" destination="5YT-Oh-F6A" id="J6Y-3C-Nb7"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.leadinghalf.fill" catalog="system" id="ilD-CI-YZd"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rh9-Ln-1z1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="834"/>
+            <point key="canvasLocation" x="-230" y="775"/>
         </scene>
         <!--Gallery-->
-        <scene sceneID="qI1-cJ-qjE">
+        <scene sceneID="VGS-Gn-SBb">
             <objects>
-                <viewController id="XMV-c0-eSj" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mGt-pn-rJQ">
+                <collectionViewController id="Bo3-a6-gos" customClass="GalleryCVController" customModule="Picturys" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cYE-z3-ldE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="c2r-nz-rOc"/>
                         <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.30980392159999998" green="0.46666666670000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Gallery" image="photo.artframe" catalog="system" id="sdc-F5-KpQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TMx-Cf-mKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="boe-Op-skE">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pictureCell" id="HRM-HR-O9t" customClass="GalleryCell" customModule="Picturys" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JDT-iB-0R5">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCA-lh-gsP">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="QiX-hZ-gRp"/>
+                                                <constraint firstAttribute="width" constant="128" id="qqa-02-iWq"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RCA-lh-gsP" firstAttribute="top" secondItem="JDT-iB-0R5" secondAttribute="top" id="Fpd-hV-ell"/>
+                                        <constraint firstAttribute="bottom" secondItem="RCA-lh-gsP" secondAttribute="bottom" id="YuD-oC-dqr"/>
+                                        <constraint firstAttribute="trailing" secondItem="RCA-lh-gsP" secondAttribute="trailing" id="v3p-ZH-xDL"/>
+                                        <constraint firstItem="RCA-lh-gsP" firstAttribute="leading" secondItem="JDT-iB-0R5" secondAttribute="leading" id="xcI-Sf-cHe"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="showImage" destination="RCA-lh-gsP" id="Udh-RZ-z9v"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Bo3-a6-gos" id="nGO-pq-shz"/>
+                            <outlet property="delegate" destination="Bo3-a6-gos" id="1ZV-Or-GJL"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Gallery" image="photo.artframe" catalog="system" id="cZw-v5-r3j"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="udt-fJ-Ubh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="-477"/>
+            <point key="canvasLocation" x="986.95652173913049" y="-503.57142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y52-VK-d0T">
@@ -223,9 +280,9 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="XMV-c0-eSj" kind="relationship" relationship="viewControllers" id="4iW-XF-BCo"/>
-                        <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" id="LfV-uX-9Tw"/>
-                        <segue destination="5BO-DW-675" kind="relationship" relationship="viewControllers" id="usr-6j-DXk"/>
+                        <segue destination="Bo3-a6-gos" kind="relationship" relationship="viewControllers" id="GiP-H8-TYq"/>
+                        <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" id="Z1P-OP-d1q"/>
+                        <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" id="iDz-fJ-spg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMB-GY-frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -237,7 +294,7 @@
         <image name="buttonActive" width="75" height="57"/>
         <image name="buttonInActive" width="75" height="57"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
-        <image name="star.leadinghalf.filled" catalog="system" width="128" height="116"/>
+        <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
         <image name="starInActive" width="40" height="38"/>
         <image name="uploadImage" width="122" height="123"/>
         <systemColor name="systemBackgroundColor">
