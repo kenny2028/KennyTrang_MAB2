@@ -15,7 +15,7 @@ class GalleryCVController: UICollectionViewController {
     var allImageData = [pictureData]()
     let imagetest = UIImage(named: "mtn.jpg")
     
-    
+ 
     
 
     
@@ -25,7 +25,7 @@ class GalleryCVController: UICollectionViewController {
         //TESTING ADDING ONE IMAGE
         let image1 = pictureData(picture: UIImage(named: "mtn.jpg")!, imagetags: "sdd", favorited: false, date: "dd", month: "ddd")
         
-        for i in 1...5 {
+        for i in 1...10 {
             allImageData.append(image1)
         }
         
@@ -47,6 +47,25 @@ class GalleryCVController: UICollectionViewController {
 
         
     }
+    
+    
+    
+    //MARK: SEGUE
+    @IBAction func unwindSegue(_ segue:UIStoryboardSegue) {
+        if segue.identifier == "UploadSegue" {
+            if let source = segue.source as? UploadViewController {
+                if source.uploadedImage.image != nil {
+                    
+                    allImageData.append(source.sendingImage)
+                    
+                    print(source.sendingImage)
+                    collectionView.reloadData()
+                        
+                }
+            }
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -119,6 +138,8 @@ class GalleryCVController: UICollectionViewController {
         
         return layout
     }
+    
+    
     
 
     // MARK: UICollectionViewDelegate

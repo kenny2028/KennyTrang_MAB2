@@ -20,7 +20,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     var imageAdd: UIImage?
     
-    
+    var sendingImage = pictureData()
     
     
     
@@ -29,15 +29,21 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     @IBAction func addEntryPressed(_ sender: Any) {
         
   
+        
+            //prepare for sending
+            sendingImage = pictureData(picture: imageAdd!, imagetags: tagsTextField.text!, favorited: favoritePressed, date: dateLabel.text!, month: dateLabel.text!)
             
-        //TESTING
-        let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text) \(imageAdd) ", preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
-
+//            
+//            let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text) \(imageAdd) ", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//            self.present(alert, animated: true)
         
         
+        
+
+
+    
     }
     
     // MARK: Favorite Functions

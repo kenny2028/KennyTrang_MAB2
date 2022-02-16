@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,34 +15,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="db6-Bf-Leh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h7f-pF-B9c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo(LaunchScreen)" translatesAutoresizingMaskIntoConstraints="NO" id="USt-5W-yyC">
-                                        <rect key="frame" x="82" y="296.5" width="250" height="261"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="logo(LaunchScreen)" translatesAutoresizingMaskIntoConstraints="NO" id="USt-5W-yyC">
+                                        <rect key="frame" x="82" y="0.0" width="250" height="578"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-l9-ABi">
-                                        <rect key="frame" x="0.0" y="621" width="414" height="200"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picturystitle" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-l9-ABi">
+                                        <rect key="frame" x="0.0" y="618" width="414" height="200"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55294117647058827" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="USt-5W-yyC" firstAttribute="centerX" secondItem="db6-Bf-Leh" secondAttribute="centerX" id="2L9-nb-6Kp"/>
-                                    <constraint firstAttribute="trailing" secondItem="oL7-l9-ABi" secondAttribute="trailing" id="2Qd-8K-XLo"/>
-                                    <constraint firstAttribute="bottom" secondItem="oL7-l9-ABi" secondAttribute="bottom" constant="75" id="7K9-RL-6Vu"/>
-                                    <constraint firstItem="oL7-l9-ABi" firstAttribute="top" secondItem="USt-5W-yyC" secondAttribute="bottom" constant="63.5" id="NCp-BB-Ydd"/>
-                                    <constraint firstItem="oL7-l9-ABi" firstAttribute="leading" secondItem="db6-Bf-Leh" secondAttribute="leading" id="bZN-co-yUQ"/>
-                                    <constraint firstItem="oL7-l9-ABi" firstAttribute="centerX" secondItem="db6-Bf-Leh" secondAttribute="centerX" id="u4W-MX-eNp"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="db6-Bf-Leh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="BY7-RD-ttS"/>
-                            <constraint firstItem="db6-Bf-Leh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DgY-oN-0Am"/>
-                            <constraint firstItem="db6-Bf-Leh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qfs-4y-8vA"/>
-                            <constraint firstAttribute="bottom" secondItem="db6-Bf-Leh" secondAttribute="bottom" id="w1h-aK-C8W"/>
+                            <constraint firstItem="h7f-pF-B9c" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6y6-zD-rnH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h7f-pF-B9c" secondAttribute="bottom" id="dJA-kz-dyh"/>
+                            <constraint firstAttribute="trailing" secondItem="h7f-pF-B9c" secondAttribute="trailing" id="e7k-lW-d9x"/>
+                            <constraint firstItem="h7f-pF-B9c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kPW-Cc-Se5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -53,10 +43,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-1" width="500" height="200"/>
         <image name="logo(LaunchScreen)" width="250" height="261"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="picturystitle" width="500" height="200"/>
     </resources>
 </document>

@@ -11,9 +11,9 @@ import UIKit
 struct pictureData {
     
     var picture = UIImage()
-    var imagetags : String
+    var imagetags : String?
     var favorited = false
-    var date : String
-    var month : String
+    var date : String?
+    var month : String?
     
 }
