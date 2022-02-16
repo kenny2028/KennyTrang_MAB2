@@ -11,12 +11,12 @@ class DetailViewController: UIViewController {
     
     var importingImage = pictureData()
     
-    @IBOutlet weak var imageShow: UIImageView!
-    
+
     @IBOutlet weak var tagsLabel: UILabel!
     
-    
     @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var imageShow: UIImageView!
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,10 +31,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageShow.image = importingImage.picture
-        tagsLabel.text = importingImage.imagetags
-        dateLabel.text = importingImage.date
-        // Do any additional setup after loading the view.
+
     }
     
 
