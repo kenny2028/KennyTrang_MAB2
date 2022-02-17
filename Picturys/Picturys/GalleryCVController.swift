@@ -22,12 +22,12 @@ class GalleryCVController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TESTING ADDING ONE IMAGE
-        let image1 = pictureData(picture: UIImage(named: "mtn.jpg")!, imagetags: "sdd", favorited: false, date: "dd", month: "ddd")
-        
-        for i in 1...10 {
-            allImageData.append(image1)
-        }
+//        //TESTING ADDING ONE IMAGE
+//        let image1 = pictureData(picture: UIImage(named: "mtn.jpg")!, imagetags: "sdd", favorited: false, date: "dd", month: "ddd")
+//        
+//        for i in 1...10 {
+//            allImageData.append(image1)
+//        }
         
         
         
@@ -124,8 +124,8 @@ class GalleryCVController: UICollectionViewController {
         var header = CollectionRV()
         if kind == UICollectionView.elementKindSectionHeader{
             header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "photoheader", for: indexPath) as! CollectionRV
-            header.headerlabel.text = allImageData[indexPath.row].month
-            header.headerlabel.text = "OOGABOOGA"
+//            header.headerlabel.text = allImageData[indexPath.row].month
+            header.headerlabel.text = "Feburary"
         }
         return header
     }
