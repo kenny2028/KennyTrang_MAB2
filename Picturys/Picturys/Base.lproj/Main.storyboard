@@ -17,6 +17,24 @@
         </array>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="lRZ-EK-cYA">
+            <objects>
+                <viewController id="SHd-K9-SVj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X65-QE-Ip8">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lS1-ZN-Ewp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="buttonInActive" selectedImage="buttonActive" id="CMI-oH-3bV">
+                        <inset key="imageInsets" minX="0.0" minY="-40" maxX="0.0" maxY="-20"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIE-m4-109" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="191"/>
+        </scene>
         <!--Upload View Controller-->
         <scene sceneID="Up8-wC-NdK">
             <objects>
@@ -26,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="euR-Wy-Zcq">
-                                <rect key="frame" x="10" y="109" width="408" height="628"/>
+                                <rect key="frame" x="10" y="109" width="408" height="677"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei6-lH-IyP">
                                         <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="32.666666666666664"/>
@@ -35,17 +53,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUa-PH-CcS">
-                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="432.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="481.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-FB-oat">
-                                                <rect key="frame" x="143" y="164.33333333333334" width="102" height="104.00000000000003"/>
+                                                <rect key="frame" x="143" y="188.66666666666666" width="102" height="103.99999999999997"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="8vP-5t-tH3"/>
                                                     <constraint firstAttribute="height" constant="104" id="fXX-iD-E8R"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtL-BM-aQJ">
-                                                <rect key="frame" x="10" y="10" width="388" height="412.33333333333331"/>
+                                                <rect key="frame" x="10" y="10" width="388" height="461.33333333333331"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <integer key="value" value="5"/>
@@ -53,7 +71,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-Qi-GQm">
-                                                <rect key="frame" x="0.0" y="0.0" width="408" height="432.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="481.33333333333331"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -111,7 +129,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edN-Ku-f5n">
-                                        <rect key="frame" x="0.0" y="511" width="408" height="34"/>
+                                        <rect key="frame" x="0.0" y="560" width="408" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Wi8-Up-FGB"/>
                                         </constraints>
@@ -119,7 +137,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZM-dw-FtY">
-                                        <rect key="frame" x="0.0" y="568" width="408" height="60"/>
+                                        <rect key="frame" x="0.0" y="617" width="408" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Bj9-uJ-a6Y"/>
@@ -176,7 +194,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7N-IB-tgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OpH-8w-t9f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="475" y="157"/>
+            <point key="canvasLocation" x="1825" y="200"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="1RN-Ef-eU7">
@@ -396,10 +414,15 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="translucent" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="FhC-Kc-gkq" kind="relationship" relationship="viewControllers" destinationCreationSelector="gallerySegue" id="GiP-H8-TYq"/>
-                        <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" destinationCreationSelector="UploadSegue" id="Z1P-OP-d1q"/>
-                        <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" destinationCreationSelector="favoritesSegue" id="iDz-fJ-spg"/>
+                        <segue destination="SHd-K9-SVj" kind="relationship" relationship="viewControllers" id="s2g-eB-uoU"/>
+                        <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" id="hbO-vN-8VU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMB-GY-frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
