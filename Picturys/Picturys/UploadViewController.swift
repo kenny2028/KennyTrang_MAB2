@@ -23,28 +23,52 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     var sendingImage = pictureData()
     
     
-    
     //MARK: ADD ENTRY
+    
+    
+    
+    //MARK: Segue Actions
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "UploadSegue" {
+            if imageAdd != nil {
+                return true
+            } else {
+                let alert = UIAlertController(title: "No Images Found", message: "Please add an image", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                
+                return false
+            }
+            
+        } else {
+            return true
+        }
+    }
     
     @IBAction func addEntryPressed(_ sender: Any) {
         
-  
-        
-            //prepare for sending
-            sendingImage = pictureData(picture: imageAdd!, imagetags: tagsTextField.text!, favorited: favoritePressed, date: dateLabel.text!, month: dateLabel.text!)
-        print(sendingImage)
+    //Check for empty cases
+        if imageAdd != nil {
+            sendingImage.picturedata = imageAdd?.jpegData(compressionQuality: 0)!
+            sendingImage.imagetags = tagsTextField.text!
+            sendingImage.favorited = favoritePressed
+            sendingImage.date = dateLabel.text!
+            //sendingImage.month = dateLabel.text!
+            sendingImage.datetag = Date()
             
-//
-//            let alert = UIAlertController(title: "Entry Added", message: "Date:\(dateLabel.text) Favorite: \(favoritePressed) Tags: \(tagsTextField.text) \(imageAdd) ", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//            self.present(alert, animated: true)
-        
-        
-        
+            
+            print(sendingImage)
+                
+            
+        } else {
+            let alert = UIAlertController(title: "No Images Found", message: "Please add an image", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+            
+        }
 
 
-    
     }
     
     // MARK: Favorite Functions

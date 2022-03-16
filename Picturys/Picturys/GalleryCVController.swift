@@ -11,7 +11,7 @@ private let reuseIdentifier = "pictureCell"
 
 class GalleryCVController: UICollectionViewController {
     
-    
+    var pictureDataRunner = pictureDataHandler()
     var allImageData = [pictureData]()
     let imagetest = UIImage(named: "mtn.jpg")
     
@@ -33,6 +33,7 @@ class GalleryCVController: UICollectionViewController {
         
         collectionView.collectionViewLayout = generateLayout()
         
+        //pictureDataRunner.realmSetup()
         
         //collectionView.reloadData(
         // Uncomment the following line to preserve selection between presentations
@@ -48,23 +49,49 @@ class GalleryCVController: UICollectionViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        pictureDataRunner.realmSetup()
+        
+        allImageData = pictureDataRunner.getAllImages()
+        
+    
+        
+    
+        
+        
+        print("Check if there in \(allImageData.isEmpty)")
+    
+        
+    }
+    
     
     
     //MARK: SEGUE
     @IBAction func unwindSegue(_ segue:UIStoryboardSegue) {
         if segue.identifier == "UploadSegue" {
             if let source = segue.source as? UploadViewController {
-                if source.uploadedImage.image != nil {
-                    
-                    allImageData.append(source.sendingImage)
-                    
+                if source.sendingImage.picturedata != nil {
+
+                    var newitem = pictureData()
+                    newitem = source.sendingImage
+
+                    self.pictureDataRunner.addItem(newItem: newitem)
+
+                    //allImageData.append(source.sendingImage)
+
                     print(source.sendingImage)
-                    collectionView.reloadData()
-                        
+                    render()
+
                 }
             }
         }
     }
+    
+
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
@@ -83,6 +110,12 @@ class GalleryCVController: UICollectionViewController {
     }
     
 
+    
+    func render() {
+        allImageData = pictureDataRunner.getAllImages()
+        collectionView.reloadData()
+    }
+        
     /*
     // MARK: - Navigation
 
@@ -113,7 +146,7 @@ class GalleryCVController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
         //configure the cell
 
-        let image = allImageData[indexPath.row].picture
+        let image = UIImage(data: allImageData[indexPath.row].picturedata!)
         cell.showImage.image = image
         return cell
     }
@@ -125,7 +158,20 @@ class GalleryCVController: UICollectionViewController {
         if kind == UICollectionView.elementKindSectionHeader{
             header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "photoheader", for: indexPath) as! CollectionRV
 //            header.headerlabel.text = allImageData[indexPath.row].month
-            header.headerlabel.text = "Feburary"
+            //header.headerlabel.text = "Feburary"
+            
+            if allImageData.isEmpty == false {
+            header.headerlabel.text = allImageData[indexPath.row].date
+                //Get Date From first object and create a section header
+                let grabdate = allImageData[indexPath.row].datetag
+                let formatter = DateFormatter()
+                formatter.dateFormat = "MMMM yyyy"
+                
+                
+                header.headerlabel.text = "\(formatter.string(from: grabdate!))"
+            }
+            
+            
         }
         return header
     }
@@ -155,7 +201,16 @@ class GalleryCVController: UICollectionViewController {
         return layout
     }
     
-    
+    func filterPhotos() {
+        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd+HH:mm"
+        
+        let sortedArray = allImageData.sorted {$0.datetag! > $1.datetag!}
+        
+        allImageData = sortedArray
+        
+    }
     
 
     // MARK: UICollectionViewDelegate

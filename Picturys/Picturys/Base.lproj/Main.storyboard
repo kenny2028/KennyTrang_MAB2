@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="euR-Wy-Zcq">
-                                <rect key="frame" x="10" y="109" width="408" height="677"/>
+                                <rect key="frame" x="10" y="109" width="408" height="628"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei6-lH-IyP">
                                         <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="32.666666666666664"/>
@@ -53,17 +53,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUa-PH-CcS">
-                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="481.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="432.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-FB-oat">
-                                                <rect key="frame" x="143" y="188.66666666666666" width="102" height="103.99999999999997"/>
+                                                <rect key="frame" x="143" y="164.33333333333334" width="102" height="104.00000000000003"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="8vP-5t-tH3"/>
                                                     <constraint firstAttribute="height" constant="104" id="fXX-iD-E8R"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtL-BM-aQJ">
-                                                <rect key="frame" x="10" y="10" width="388" height="461.33333333333331"/>
+                                                <rect key="frame" x="10" y="10" width="388" height="412.33333333333331"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <integer key="value" value="5"/>
@@ -71,7 +71,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-Qi-GQm">
-                                                <rect key="frame" x="0.0" y="0.0" width="408" height="481.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="432.33333333333331"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -129,7 +129,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edN-Ku-f5n">
-                                        <rect key="frame" x="0.0" y="560" width="408" height="34"/>
+                                        <rect key="frame" x="0.0" y="511" width="408" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Wi8-Up-FGB"/>
                                         </constraints>
@@ -137,7 +137,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZM-dw-FtY">
-                                        <rect key="frame" x="0.0" y="617" width="408" height="60"/>
+                                        <rect key="frame" x="0.0" y="568" width="408" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Bj9-uJ-a6Y"/>
@@ -279,7 +279,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-K7-a0D">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-K7-a0D">
                                     <rect key="frame" x="4" y="0.0" width="420" height="50"/>
                                     <fontDescription key="fontDescription" name="ArchivoBlack-Regular" family="Archivo Black" pointSize="25"/>
                                     <nil key="textColor"/>
@@ -423,6 +423,7 @@
                         <segue destination="FhC-Kc-gkq" kind="relationship" relationship="viewControllers" destinationCreationSelector="gallerySegue" id="GiP-H8-TYq"/>
                         <segue destination="SHd-K9-SVj" kind="relationship" relationship="viewControllers" id="s2g-eB-uoU"/>
                         <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" id="hbO-vN-8VU"/>
+                        <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" id="HyN-Sk-Rrc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMB-GY-frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

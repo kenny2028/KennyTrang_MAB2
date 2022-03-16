@@ -21,7 +21,7 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        imageShow.image = importingImage.picture
+        imageShow.image = UIImage(data: importingImage.picturedata!)
         tagsLabel.text = importingImage.imagetags
         dateLabel.text = importingImage.date
         

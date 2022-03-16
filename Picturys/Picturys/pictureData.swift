@@ -7,13 +7,19 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-struct pictureData {
+
+class pictureData: Object {
     
-    var picture = UIImage()
-    var imagetags : String?
-    var favorited = false
-    var date : String?
-    var month : String?
+    //var picture = UIImage()
+    @Persisted(primaryKey: true) var _id = ObjectId.generate()
     
+    @Persisted var picturedata : Data?
+    
+    @Persisted var imagetags : String?
+    @Persisted var favorited = false
+    @Persisted var date : String?
+    //@Persisted var month : String?
+    @Persisted var datetag: Date?
 }
