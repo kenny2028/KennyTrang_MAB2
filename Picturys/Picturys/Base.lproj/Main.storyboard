@@ -37,7 +37,7 @@
                                 <state key="highlighted" image="cameraActive"/>
                                 <connections>
                                     <action selector="shutterButtonPressed:" destination="SHd-K9-SVj" eventType="touchUpInside" id="IlX-xA-jsW"/>
-                                    <segue destination="PTM-Zr-mbU" kind="presentation" id="1B0-kI-c7l"/>
+                                    <segue destination="PTM-Zr-mbU" kind="show" identifier="sendSegue" id="0pX-NE-Jda"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,6 +200,9 @@
                                     <navigationItem id="z5o-qf-7bO">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wvo-IC-u1I">
                                             <color key="tintColor" systemColor="systemPinkColor"/>
+                                            <connections>
+                                                <segue destination="OpH-8w-t9f" kind="unwind" unwindAction="unwindtoCameraWith_segue:" id="Oz0-EC-pis"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -218,6 +221,7 @@
                     <tabBarItem key="tabBarItem" title="" image="buttonInActive" selectedImage="buttonActive" id="YeL-PO-s9g">
                         <inset key="imageInsets" minX="0.0" minY="-40" maxX="0.0" maxY="-20"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="GRf-qL-Ys9"/>
                     <connections>
                         <outlet property="dateLabel" destination="Ei6-lH-IyP" id="woD-uB-gDI"/>
                         <outlet property="favoriteImage" destination="T9Q-Qz-AMN" id="DXi-1I-CB6"/>

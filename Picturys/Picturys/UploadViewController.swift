@@ -46,6 +46,22 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         }
     }
     
+    @IBAction func unwindtoImg (_ segue:UIStoryboardSegue) {
+        
+        if segue.identifier == "popSegue" {
+            if let source = segue.source as? CameraViewController {
+                
+                uploadedImage.image = UIImage(data:source.imagedata!)
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    
+    
     @IBAction func addEntryPressed(_ sender: Any) {
         
     //Check for empty cases
@@ -124,20 +140,22 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     
     override func viewWillAppear(_ animated: Bool) {
-  
+//
         //Update Date Label
         let formatter = DateFormatter()
         let date = Date()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
-    
+//
         dateLabel.text = "\(formatter.string(from: date))"
         
-        
-        
+        //uploadedImage.image = UIImage(named: "mtn.jpg")
+        uploadedImage.image = imageAdd
+        print("tEsteer")
+       
         
         //Reset Screen
-        ResetUI()
+        //ResetUI()
         
     }
     

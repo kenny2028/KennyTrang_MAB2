@@ -43,12 +43,37 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         print("Button Pressed")
         
         
+    
         //output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
         
-       
+        
         
         
     }
+    
+    
+    //segue action
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("called passing data")
+        if segue.identifier == "sendSegue" {
+            let destinationVC = segue.destination as? UploadViewController
+            output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+            destinationVC?.imageAdd = UIImage(data:imagedata!)
+            
+            
+        }
+    }
+    
+    
+    
+
+    
+    @IBAction func unwindtoCamera (_segue:UIStoryboardSegue) {
+        
+    }
+    
+    
+    
     
     
     
@@ -73,6 +98,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
 
     override func viewWillAppear(_ animated: Bool) {
+        //TEstiing
+//        let imageAdd = UIImage(named: "mtn.jpg")
+//        imagedata = imageAdd?.jpegData(compressionQuality: 0)!
+        
         
         view.layer.addSublayer(previewLayer)
         view.bringSubviewToFront(shutterButton)
