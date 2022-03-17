@@ -31,6 +31,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     //Image data set for passing
     
     var imagedata : Data?
+    var imageSender : UIImage?
     
     
     // Shutton buttom
@@ -57,8 +58,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         print("called passing data")
         if segue.identifier == "sendSegue" {
             let destinationVC = segue.destination as? UploadViewController
-            output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-            destinationVC?.imageAdd = UIImage(data:imagedata!)
+            //output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+            
+            //imageSender = UIImage(named:"mtn.jpg")
+            
+            destinationVC?.imageAdd = imageSender
             
             
         }
@@ -206,11 +210,15 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             return
         }
         
+    
+        imageSender = UIImage(data: data)
+        
+        
 //        let image = UIImage(data: data)
 //
 //        let imageView = UIImageView(image: image)
         
-        imagedata = data
+        //imagedata = data
         //prepare for sender
         print("image taken")
         
