@@ -58,7 +58,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         print("called passing data")
         if segue.identifier == "sendSegue" {
             let destinationVC = segue.destination as? UploadViewController
-            //output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+            output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
             
             //imageSender = UIImage(named:"mtn.jpg")
             
