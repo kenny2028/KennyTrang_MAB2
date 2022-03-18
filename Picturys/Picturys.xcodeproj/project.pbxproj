@@ -16,6 +16,7 @@
 		E42CD42127B463C400342AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42CD41F27B463C400342AB4 /* Main.storyboard */; };
 		E42CD42327B463C500342AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42CD42227B463C500342AB4 /* Assets.xcassets */; };
 		E42CD42627B463C500342AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */; };
+		E438725827E518A0004EA69D /* MainCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438725727E518A0004EA69D /* MainCameraViewController.swift */; };
 		E4482B1E27E18A51009C307C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E4482B1D27E18A51009C307C /* Realm */; };
 		E4482B2027E18A51009C307C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4482B1F27E18A51009C307C /* RealmSwift */; };
 		E4482B2227E18D89009C307C /* dataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4482B2127E18D89009C307C /* dataHandler.swift */; };
@@ -38,6 +39,7 @@
 		E42CD42527B463C500342AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E42CD42727B463C500342AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E42CD43127B468CA00342AB4 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		E438725727E518A0004EA69D /* MainCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCameraViewController.swift; sourceTree = "<group>"; };
 		E4482B2127E18D89009C307C /* dataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHandler.swift; sourceTree = "<group>"; };
 		E46948CC27BCC36400302E43 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E46948CE27BCD2F100302E43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				E42CD41F27B463C400342AB4 /* Main.storyboard */,
 				E46948CE27BCD2F100302E43 /* DetailViewController.swift */,
 				E46CE72627E2876200C80823 /* CameraViewController.swift */,
+				E438725727E518A0004EA69D /* MainCameraViewController.swift */,
 				E46948CC27BCC36400302E43 /* TabBarController.swift */,
 				E49A503427BC873000A1C0FE /* GalleryCVController.swift */,
 				E49A503627BC877C00A1C0FE /* GalleryCell.swift */,
@@ -187,6 +190,7 @@
 				E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */,
 				E42018B627B75C850019B533 /* UploadViewController.swift in Sources */,
 				E408396F27BB68DE001D8523 /* pictureData.swift in Sources */,
+				E438725827E518A0004EA69D /* MainCameraViewController.swift in Sources */,
 				E42CD41C27B463C400342AB4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,8 +340,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RFQ254HSW9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picturys/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow \"Picturys\" to take Pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please Allow \"Picturys\" Access to your Gallery for Images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -348,7 +355,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KennyT.Picturys;
+				PRODUCT_BUNDLE_IDENTIFIER = KennyTCUBOULDER.Picturys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,8 +370,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RFQ254HSW9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picturys/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow \"Picturys\" to take Pictures";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please Allow \"Picturys\" Access to your Gallery for Images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -375,7 +385,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KennyT.Picturys;
+				PRODUCT_BUNDLE_IDENTIFIER = KennyTCUBOULDER.Picturys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

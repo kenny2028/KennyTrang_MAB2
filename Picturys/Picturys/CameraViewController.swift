@@ -11,6 +11,9 @@ import AVFoundation
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
+    var cameraOn = false
+    
+    
     
     //Capture Session
     
@@ -20,7 +23,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     //Photo Output
     
-    let output = AVCapturePhotoOutput()
+    var output = AVCapturePhotoOutput()
     
     
     //View Preview Layer (Source of Showing user Actual Image )
@@ -45,7 +48,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         
     
-        //output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+        output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
         
         
         
@@ -56,10 +59,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     //segue action
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("called passing data")
-        if segue.identifier == "sendSegue" {
+        if segue.identifier == "popSegue" {
             let destinationVC = segue.destination as? UploadViewController
             output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
             
+            print("Should be second")
             //imageSender = UIImage(named:"mtn.jpg")
             
             destinationVC?.imageAdd = imageSender
@@ -73,6 +77,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     
     @IBAction func unwindtoCamera (_segue:UIStoryboardSegue) {
+//
+        print("unwinding")
+        checkCameraPermissions()
+ 
+        
         
     }
     
@@ -96,12 +105,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //view.layer.addSublayer(previewLayer)
+        //view.bringSubviewToFront(shutterButton)
+        
+        //checkCameraPermissions()
+        
         // Do any additional setup after loading the view.
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
+        
+        print("Appearing")
         //TEstiing
 //        let imageAdd = UIImage(named: "mtn.jpg")
 //        imagedata = imageAdd?.jpegData(compressionQuality: 0)!
@@ -114,7 +130,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         
         //previewLayer.backgroundColor = UIColor.systemRed.cgColor
         
-        checkCameraPermissions()
+         checkCameraPermissions()
         
         //cameraButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
     }
@@ -146,7 +162,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             
         case .notDetermined:
             //Request Permission
-            
             AVCaptureDevice.requestAccess(for: .video) {
                 granted in
                 guard granted else {
@@ -159,11 +174,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             
             
         case .restricted:
-                break
+            break
         case .denied:
-                break
+            break
         case .authorized:
-            initCamera()
+            DispatchQueue.main.async {
+                self.initCamera()
+            }
         @unknown default:
             break
         }
@@ -173,27 +190,41 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     
     func initCamera() {
+        
+        print("Initializing")
         let session = AVCaptureSession()
+        print("check1")
         if let device = AVCaptureDevice.default(for: .video) {
             do {
                 let input = try AVCaptureDeviceInput(device: device)
                 if session.canAddInput(input) {
                     session.addInput(input)
+                    print("check2")
                 }
                 
                 //output should go into AVCaptureOutput
+                output = AVCapturePhotoOutput()
                 if session.canAddOutput(output) {
                     session.addOutput(output)
+                    print("check3")
                 }
                 
                 
                 previewLayer.videoGravity = .resizeAspectFill
                 previewLayer.session = session
                 
+                print("checkFinal")
+//                if (!cameraOn) {
+//                    print("CheckFinal2")
+//                    session.startRunning()
+//                    cameraOn.toggle()
+//                }
+                self.currentsession = session
+                
+                
                 session.startRunning()
                 
-                self.currentsession = session
-              
+            
             
                 
             }
@@ -221,23 +252,22 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         //imagedata = data
         //prepare for sender
         print("image taken")
+        print("Should be first")
         
+        //currentsession?.removeOutput(output)
         currentsession?.stopRunning()
+        //output = AVCapturePhotoOutput
+
+        
+        performSegue(withIdentifier: "popSegue", sender: nil)
+    
 //
 //        imageView.contentMode = .scaleAspectFill
 //        imageView.frame = view.bounds
 //
 //        view.addSubview(imageView)
     }
-    
-    
-    @objc private func didTapTakePhoto() {
-        print("Camera Button Pressed")
-        
-        //Run segue and prepare for sender
-        
-        //output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-    }
+
     
 
 }

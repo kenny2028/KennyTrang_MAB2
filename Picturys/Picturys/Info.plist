@@ -26,9 +26,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Please Allow &quot;Picturys&quot; to take Pictures</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Please Allow &quot;Picturys&quot; Access to your Gallery for Images</string>
 </dict>
 </plist>

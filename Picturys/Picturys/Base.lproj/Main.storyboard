@@ -37,7 +37,6 @@
                                 <state key="highlighted" image="cameraActive"/>
                                 <connections>
                                     <action selector="shutterButtonPressed:" destination="SHd-K9-SVj" eventType="touchUpInside" id="IlX-xA-jsW"/>
-                                    <segue destination="PTM-Zr-mbU" kind="show" identifier="sendSegue" id="0pX-NE-Jda"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,6 +52,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="shutterButton" destination="3VU-rT-kce" id="3aY-Xk-qW2"/>
+                        <segue destination="PTM-Zr-mbU" kind="show" identifier="popSegue" id="Ly9-4n-hnk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIE-m4-109" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
