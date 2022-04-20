@@ -10,7 +10,7 @@
 		E401E01A27BCA87D0072C2BF /* CollectionRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401E01927BCA87D0072C2BF /* CollectionRV.swift */; };
 		E408396F27BB68DE001D8523 /* pictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E408396E27BB68DE001D8523 /* pictureData.swift */; };
 		E42018B627B75C850019B533 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42018B527B75C850019B533 /* UploadViewController.swift */; };
-		E42018BA27B75E4E0019B533 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = E42CD43127B468CA00342AB4 /* fonts */; };
+		E42018BA27B75E4E0019B533 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E42CD43127B468CA00342AB4 /* Fonts */; };
 		E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42CD41927B463C400342AB4 /* AppDelegate.swift */; };
 		E42CD41C27B463C400342AB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42CD41B27B463C400342AB4 /* SceneDelegate.swift */; };
 		E42CD42127B463C400342AB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42CD41F27B463C400342AB4 /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 		E42CD42227B463C500342AB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E42CD42527B463C500342AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E42CD42727B463C500342AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E42CD43127B468CA00342AB4 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		E42CD43127B468CA00342AB4 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		E438725727E518A0004EA69D /* MainCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCameraViewController.swift; sourceTree = "<group>"; };
 		E4482B2127E18D89009C307C /* dataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataHandler.swift; sourceTree = "<group>"; };
 		E46948CC27BCC36400302E43 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				E401E01927BCA87D0072C2BF /* CollectionRV.swift */,
 				E42CD42227B463C500342AB4 /* Assets.xcassets */,
 				E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */,
-				E42CD43127B468CA00342AB4 /* fonts */,
+				E42CD43127B468CA00342AB4 /* Fonts */,
 				E42CD42727B463C500342AB4 /* Info.plist */,
 			);
 			path = Picturys;
@@ -169,7 +169,7 @@
 				E42CD42627B463C500342AB4 /* LaunchScreen.storyboard in Resources */,
 				E42CD42327B463C500342AB4 /* Assets.xcassets in Resources */,
 				E42CD42127B463C400342AB4 /* Main.storyboard in Resources */,
-				E42018BA27B75E4E0019B533 /* fonts in Resources */,
+				E42018BA27B75E4E0019B533 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

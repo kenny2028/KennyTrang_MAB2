@@ -64,11 +64,11 @@
             <objects>
                 <viewController id="PTM-Zr-mbU" customClass="UploadViewController" customModule="Picturys" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJg-Cq-UiF">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="euR-Wy-Zcq">
-                                <rect key="frame" x="10" y="65" width="408" height="667"/>
+                                <rect key="frame" x="10" y="109" width="408" height="628"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei6-lH-IyP">
                                         <rect key="frame" x="0.0" y="0.0" width="90.333333333333329" height="32.666666666666664"/>
@@ -77,17 +77,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUa-PH-CcS">
-                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="471.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="55.666666666666657" width="408" height="432.33333333333337"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-FB-oat">
-                                                <rect key="frame" x="143" y="183.66666666666663" width="102" height="104"/>
+                                                <rect key="frame" x="143" y="164.33333333333334" width="102" height="104.00000000000003"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="8vP-5t-tH3"/>
                                                     <constraint firstAttribute="height" constant="104" id="fXX-iD-E8R"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RtL-BM-aQJ">
-                                                <rect key="frame" x="10" y="9.9999999999999716" width="388" height="451.33333333333326"/>
+                                                <rect key="frame" x="10" y="10" width="388" height="412.33333333333331"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <integer key="value" value="5"/>
@@ -95,7 +95,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-Qi-GQm">
-                                                <rect key="frame" x="0.0" y="0.0" width="408" height="471.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="408" height="432.33333333333331"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
@@ -153,7 +153,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in Tags" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edN-Ku-f5n">
-                                        <rect key="frame" x="0.0" y="550" width="408" height="34"/>
+                                        <rect key="frame" x="0.0" y="511" width="408" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Wi8-Up-FGB"/>
                                         </constraints>
@@ -161,7 +161,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZM-dw-FtY">
-                                        <rect key="frame" x="0.0" y="607" width="408" height="60"/>
+                                        <rect key="frame" x="0.0" y="568" width="408" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Bj9-uJ-a6Y"/>
@@ -299,16 +299,35 @@
                                                 <constraint firstAttribute="width" constant="128" id="qqa-02-iWq"/>
                                             </constraints>
                                         </imageView>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b76-F3-1vO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageselect" translatesAutoresizingMaskIntoConstraints="NO" id="IJl-KH-90u">
+                                            <rect key="frame" x="75" y="75" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="QpH-ce-PXv"/>
+                                                <constraint firstAttribute="height" constant="20" id="wDE-K8-Jjd"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="IJl-KH-90u" secondAttribute="trailing" constant="5" id="B08-K3-ZBQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="b76-F3-1vO" secondAttribute="trailing" id="DoF-dX-bgn"/>
                                         <constraint firstItem="RCA-lh-gsP" firstAttribute="top" secondItem="JDT-iB-0R5" secondAttribute="top" id="Fpd-hV-ell"/>
+                                        <constraint firstAttribute="bottom" secondItem="IJl-KH-90u" secondAttribute="bottom" constant="5" id="ROC-Gv-ov2"/>
                                         <constraint firstAttribute="bottom" secondItem="RCA-lh-gsP" secondAttribute="bottom" id="YuD-oC-dqr"/>
+                                        <constraint firstItem="b76-F3-1vO" firstAttribute="leading" secondItem="JDT-iB-0R5" secondAttribute="leading" id="Zgw-wG-p00"/>
+                                        <constraint firstItem="b76-F3-1vO" firstAttribute="top" secondItem="JDT-iB-0R5" secondAttribute="top" id="ii8-ZK-UUm"/>
+                                        <constraint firstAttribute="bottom" secondItem="b76-F3-1vO" secondAttribute="bottom" id="t6I-99-81w"/>
                                         <constraint firstAttribute="trailing" secondItem="RCA-lh-gsP" secondAttribute="trailing" id="v3p-ZH-xDL"/>
                                         <constraint firstItem="RCA-lh-gsP" firstAttribute="leading" secondItem="JDT-iB-0R5" secondAttribute="leading" id="xcI-Sf-cHe"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
+                                    <outlet property="imageSelectIC" destination="IJl-KH-90u" id="2hx-Ir-SJ3"/>
+                                    <outlet property="opacitySelectlayer" destination="b76-F3-1vO" id="4ga-1c-HUP"/>
                                     <outlet property="showImage" destination="RCA-lh-gsP" id="Udh-RZ-z9v"/>
                                     <segue destination="bHx-55-mT6" kind="show" identifier="detailSegue" id="W8U-sK-nyu"/>
                                 </connections>
@@ -344,7 +363,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udt-fJ-Ubh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897.1014492753625" y="-503.57142857142856"/>
+            <point key="canvasLocation" x="1896.7289719626167" y="-504.10367170626353"/>
         </scene>
         <!--Picture Details-->
         <scene sceneID="lsF-Ny-uy9">
@@ -462,6 +481,7 @@
                         <segue destination="FhC-Kc-gkq" kind="relationship" relationship="viewControllers" destinationCreationSelector="gallerySegue" id="GiP-H8-TYq"/>
                         <segue destination="SHd-K9-SVj" kind="relationship" relationship="viewControllers" id="s2g-eB-uoU"/>
                         <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" id="hbO-vN-8VU"/>
+                        <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" id="XT5-SR-mlP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RMB-GY-frd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -489,11 +509,15 @@
             <point key="canvasLocation" x="986.95652173913049" y="-503.57142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XT5-SR-mlP"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="buttonActive" width="75" height="57"/>
         <image name="buttonInActive" width="75" height="57"/>
         <image name="cameraActive" width="100" height="100"/>
         <image name="cameraInActive" width="100" height="100"/>
+        <image name="imageselect" width="50" height="50"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="star.leadinghalf.filled" catalog="system" width="128" height="116"/>
         <image name="starInActive" width="40" height="38"/>

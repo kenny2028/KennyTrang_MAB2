@@ -13,9 +13,30 @@ class GalleryCVController: UICollectionViewController {
     
     var pictureDataRunner = pictureDataHandler()
     var allImageData = [pictureData]()
-    let imagetest = UIImage(named: "mtn.jpg")
     
+    var selectedItems : [IndexPath: Bool] = [:]
+    //let imagetest = UIImage(named: "mtn.jpg")
+    
+    
+    enum Modes {
+        case view
+        case select
+    }
  
+    var currentMode: Modes = .view {
+        didSet {
+            switch currentMode {
+            case .view:
+                selectBarButton.title = "Select"
+                navigationItem.leftBarButtonItem = nil
+                collectionView.allowsMultipleSelection = false
+            case .select:
+                selectBarButton.title = "Cancel"
+                navigationItem.leftBarButtonItem = deleteBarButton
+                collectionView.allowsMultipleSelection = true
+            }
+        }
+    }
     
 
     
@@ -50,13 +71,18 @@ class GalleryCVController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //ON RELOAD SET current mode to non-select
+        currentMode = .view
+        
+        
+        //Setup barbutton into navigation bar
+        barbuttonSetup()
+        
+        //setup database
         pictureDataRunner.realmSetup()
         
+        //return all images into the array
         allImageData = pictureDataRunner.getAllImages()
-        
-    
-        
-    
         
         
         print("Check if there in \(allImageData.isEmpty)")
@@ -98,14 +124,22 @@ class GalleryCVController: UICollectionViewController {
             if let source = segue.destination as? DetailViewController {
                 if let indexPath = collectionView.indexPath(for: (sender as? UICollectionViewCell)!) {
                     source.importingImage = allImageData[indexPath.row]
-                    
-//                    let alert = UIAlertController(title: "Entry Added", message: "Date:\(source.importingImage.date) Favorite: \(source.importingImage.favorited) Tags: \(source.importingImage.imagetags) \(source.importingImage.picture) ", preferredStyle: .alert)
-//                    
-//                                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//                                self.present(alert, animated: true)
                 }
             }
             
+        }
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "detailSegue" {
+            if currentMode == .view {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
         }
     }
     
@@ -145,10 +179,34 @@ class GalleryCVController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GalleryCell
         //configure the cell
-
+        
+        if currentMode == .select {
+            cell.currentMode = "selectMode"
+            print("selectMode")
+        } else {
+            cell.currentMode = "viewMode"
+            print("currentMode")
+        }
+            
+            
         let image = UIImage(data: allImageData[indexPath.row].picturedata!)
         cell.showImage.image = image
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch currentMode {
+        case .view:
+            break
+        case .select:
+            selectedItems[indexPath] = true
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if currentMode == .select {
+            selectedItems[indexPath] = false
+        }
     }
 
     
@@ -211,6 +269,69 @@ class GalleryCVController: UICollectionViewController {
         allImageData = sortedArray
         
     }
+    
+    
+    
+    
+    //MARK: UIButton Functions
+    
+    lazy var selectBarButton: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(didSelectButtonClicked(_:)))
+        return barButtonItem
+    }()
+    
+    lazy var deleteBarButton: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didDeleteButtonClicked(_:)))
+        return barButtonItem
+    }()
+    
+    //ButtonClicked
+    
+    @objc func didSelectButtonClicked(_ sender: UIBarButtonItem) {
+       // currentMode = currentMode == .view ? .select : .view
+        if currentMode == .view {
+            currentMode = .select
+        } else {
+            currentMode = .view
+        }
+        collectionView.reloadData()
+    }
+    
+    @objc func didDeleteButtonClicked(_ sender: UIBarButtonItem) {
+        var deleteItems: [IndexPath] = []
+        for (key, value) in selectedItems {
+            if value {
+                deleteItems.append(key)
+            }
+        }
+        
+        for i in deleteItems.sorted(by: {$0.item > $1.item}) {
+            //Delete from realm
+            pictureDataRunner.deleteItem(Item: allImageData[i.item])
+            
+            //Delete from array first than delete from realm
+            allImageData.remove(at: i.item)
+            
+            collectionView.deleteItems(at: deleteItems)
+            
+            //reset dictionary
+            deleteItems.removeAll()
+            
+        
+            
+        }
+        
+    }
+    
+    //Setup barbuttonitems into layout
+    
+    private func barbuttonSetup() {
+        navigationItem.rightBarButtonItem = selectBarButton
+    }
+    
+    
+    
+    
     
 
     // MARK: UICollectionViewDelegate
