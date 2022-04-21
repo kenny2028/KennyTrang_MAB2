@@ -9,13 +9,22 @@ import UIKit
 
 private let reuseIdentifier = "pictureCell"
 
-class GalleryCVController: UICollectionViewController {
+class GalleryCVController: UICollectionViewController, UISearchBarDelegate{
+
     
     var pictureDataRunner = pictureDataHandler()
     var allImageData = [pictureData]()
     
+    var fullsavedData = [pictureData]()
+    
+    var filteredImages = [pictureData]()
+    
     var selectedItems : [IndexPath: Bool] = [:]
     //let imagetest = UIImage(named: "mtn.jpg")
+    
+    var search  = false
+    
+    
     
     
     enum Modes {
@@ -71,6 +80,8 @@ class GalleryCVController: UICollectionViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        fullsavedData = allImageData
         //ON RELOAD SET current mode to non-select
         currentMode = .view
         
@@ -86,10 +97,11 @@ class GalleryCVController: UICollectionViewController {
         
         
         print("Check if there in \(allImageData.isEmpty)")
-    
+
         
     }
     
+   
     
     
     //MARK: SEGUE
@@ -213,10 +225,14 @@ class GalleryCVController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         var header = CollectionRV()
+    
+        
+        
         if kind == UICollectionView.elementKindSectionHeader{
             header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "photoheader", for: indexPath) as! CollectionRV
 //            header.headerlabel.text = allImageData[indexPath.row].month
             //header.headerlabel.text = "Feburary"
+        
             
             if allImageData.isEmpty == false {
             header.headerlabel.text = allImageData[indexPath.row].date
@@ -230,9 +246,99 @@ class GalleryCVController: UICollectionViewController {
             }
             
             
+            
         }
+        
+        
+        
         return header
     }
+    
+    
+    //MARK: Search button functions
+    
+
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("canceled click")
+        search = false
+        
+        if !search {
+            selectBarButton.isEnabled = true
+            allImageData = fullsavedData
+            collectionView.reloadData()
+            
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+
+            search = false
+            
+            if !search {
+                selectBarButton.isEnabled = true
+                allImageData = fullsavedData
+                collectionView.reloadData()
+                
+            }
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        search = true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if searchBar.text!.isEmpty == false {
+            
+            self.filteredImages.removeAll()
+            
+            for item in self.allImageData {
+                
+                if ((item.imagetags?.lowercased().contains(searchBar.text!.lowercased())) == true) {
+                    print("filtered images 1" )
+                    self.filteredImages.append(item)
+                }
+                
+                
+            }
+            
+            fullsavedData = allImageData
+            
+            search = true
+            
+            if search {
+                //disable select
+                selectBarButton.isEnabled = false
+                allImageData = filteredImages
+                collectionView.reloadData()
+            }
+            
+            
+            
+        }
+        else {
+            
+            search = false
+            
+            if !search {
+                selectBarButton.isEnabled = true
+                allImageData = fullsavedData
+                collectionView.reloadData()
+                
+            }
+    
+            
+        }
+      
+    
+        
+    }
+    
+    
+    
     
     
     //MARK: CollectionView Layout
@@ -259,6 +365,10 @@ class GalleryCVController: UICollectionViewController {
         return layout
     }
     
+
+    
+
+    
     func filterPhotos() {
         
         let df = DateFormatter()
@@ -282,6 +392,7 @@ class GalleryCVController: UICollectionViewController {
     
     lazy var deleteBarButton: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didDeleteButtonClicked(_:)))
+        barButtonItem.tintColor = .red
         return barButtonItem
     }()
     
@@ -298,6 +409,32 @@ class GalleryCVController: UICollectionViewController {
     }
     
     @objc func didDeleteButtonClicked(_ sender: UIBarButtonItem) {
+        
+     
+        
+        let alert = UIAlertController(title: "Delete Selected Images", message: "Are you sure you want to delete the selected pictures?", preferredStyle: .alert)
+        
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(action: UIAlertAction!) in
+            print("Deleting Images")
+            
+            //Delete imatges
+            self.deleteSelectedImages()
+            
+        }))
+        
+        
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true)
+        
+        
+       
+        
+    }
+    
+    
+    func deleteSelectedImages() {
         var deleteItems: [IndexPath] = []
         for (key, value) in selectedItems {
             if value {
@@ -320,7 +457,7 @@ class GalleryCVController: UICollectionViewController {
         
             
         }
-        
+
     }
     
     //Setup barbuttonitems into layout
@@ -328,9 +465,9 @@ class GalleryCVController: UICollectionViewController {
     private func barbuttonSetup() {
         navigationItem.rightBarButtonItem = selectBarButton
     }
+
     
-    
-    
+
     
     
 

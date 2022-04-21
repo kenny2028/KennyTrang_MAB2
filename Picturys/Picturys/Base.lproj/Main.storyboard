@@ -280,13 +280,13 @@
                         <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="boe-Op-skE">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="100"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pictureCell" id="HRM-HR-O9t" customClass="GalleryCell" customModule="Picturys" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="100" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JDT-iB-0R5">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -334,24 +334,38 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="photoheader" id="bpX-uF-76n" customClass="CollectionRV" customModule="Picturys" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="100"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IQ-K7-a0D">
-                                    <rect key="frame" x="4" y="0.0" width="420" height="50"/>
+                                    <rect key="frame" x="4" y="48" width="420" height="52"/>
                                     <fontDescription key="fontDescription" name="ArchivoBlack-Regular" family="Archivo Black" pointSize="25"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <searchBar contentMode="redraw" placeholder="Search for tags" translatesAutoresizingMaskIntoConstraints="NO" id="Gyx-wC-K8h">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Aqe-KL-W9l"/>
+                                    </constraints>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Bo3-a6-gos" id="XwI-nO-XL8"/>
+                                    </connections>
+                                </searchBar>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="7IQ-K7-a0D" secondAttribute="trailing" constant="4" id="60L-r0-8ho"/>
-                                <constraint firstItem="7IQ-K7-a0D" firstAttribute="leading" secondItem="bpX-uF-76n" secondAttribute="leading" constant="4" id="Gtd-ov-Hzk"/>
-                                <constraint firstAttribute="bottom" secondItem="7IQ-K7-a0D" secondAttribute="bottom" id="M1p-o4-au1"/>
-                                <constraint firstItem="7IQ-K7-a0D" firstAttribute="top" secondItem="bpX-uF-76n" secondAttribute="top" id="Qe8-Lr-p64"/>
+                                <constraint firstAttribute="bottom" secondItem="7IQ-K7-a0D" secondAttribute="bottom" id="20a-XA-vVH"/>
+                                <constraint firstItem="Gyx-wC-K8h" firstAttribute="top" secondItem="bpX-uF-76n" secondAttribute="top" id="7Jv-q0-tUk"/>
+                                <constraint firstAttribute="trailing" secondItem="7IQ-K7-a0D" secondAttribute="trailing" constant="4" id="NpZ-4z-aHJ"/>
+                                <constraint firstItem="7IQ-K7-a0D" firstAttribute="leading" secondItem="bpX-uF-76n" secondAttribute="leading" constant="4" id="Qyc-oA-Gvv"/>
+                                <constraint firstItem="Gyx-wC-K8h" firstAttribute="leading" secondItem="bpX-uF-76n" secondAttribute="leading" id="TBK-MN-YJf"/>
+                                <constraint firstItem="7IQ-K7-a0D" firstAttribute="top" secondItem="Gyx-wC-K8h" secondAttribute="bottom" constant="4" id="ke8-0M-Sia"/>
+                                <constraint firstAttribute="trailing" secondItem="Gyx-wC-K8h" secondAttribute="trailing" id="uWQ-sK-G1b"/>
                             </constraints>
                             <connections>
                                 <outlet property="headerlabel" destination="7IQ-K7-a0D" id="FL2-c5-yZC"/>
+                                <outlet property="searchBar" destination="Gyx-wC-K8h" id="PxJ-ea-jRv"/>
                             </connections>
                         </collectionReusableView>
                         <connections>

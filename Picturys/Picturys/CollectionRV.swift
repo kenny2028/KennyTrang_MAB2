@@ -10,4 +10,9 @@ import UIKit
 class CollectionRV: UICollectionReusableView {
         
     @IBOutlet weak var headerlabel: UILabel!
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
 }

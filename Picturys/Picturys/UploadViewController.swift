@@ -202,6 +202,13 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
 
     }
     
+    //MARK: KEYBOARD FUNCTION
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
 }

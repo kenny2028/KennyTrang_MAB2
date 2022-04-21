@@ -14,10 +14,10 @@
             filePath = "Picturys/GalleryCVController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "didSelectButtonClicked(_:)"
-            landmarkType = "7">
+            startingLineNumber = "402"
+            endingLineNumber = "402"
+            landmarkName = "GalleryCVController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
