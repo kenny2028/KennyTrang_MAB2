@@ -23,6 +23,8 @@
 		E46948CD27BCC36400302E43 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46948CC27BCC36400302E43 /* TabBarController.swift */; };
 		E46948CF27BCD2F100302E43 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46948CE27BCD2F100302E43 /* DetailViewController.swift */; };
 		E46CE72727E2876200C80823 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CE72627E2876200C80823 /* CameraViewController.swift */; };
+		E48F827B2812329500822308 /* FavoritesCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48F827A2812329500822308 /* FavoritesCVController.swift */; };
+		E48F827D2812341400822308 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48F827C2812341400822308 /* FavoritesCell.swift */; };
 		E49A503527BC873000A1C0FE /* GalleryCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A503427BC873000A1C0FE /* GalleryCVController.swift */; };
 		E49A503727BC877C00A1C0FE /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A503627BC877C00A1C0FE /* GalleryCell.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		E46948CC27BCC36400302E43 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E46948CE27BCD2F100302E43 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E46CE72627E2876200C80823 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E48F827A2812329500822308 /* FavoritesCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCVController.swift; sourceTree = "<group>"; };
+		E48F827C2812341400822308 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		E49A503427BC873000A1C0FE /* GalleryCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCVController.swift; sourceTree = "<group>"; };
 		E49A503627BC877C00A1C0FE /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,10 +97,12 @@
 				E49A503627BC877C00A1C0FE /* GalleryCell.swift */,
 				E42018B527B75C850019B533 /* UploadViewController.swift */,
 				E401E01927BCA87D0072C2BF /* CollectionRV.swift */,
+				E48F827A2812329500822308 /* FavoritesCVController.swift */,
 				E42CD42227B463C500342AB4 /* Assets.xcassets */,
 				E42CD42427B463C500342AB4 /* LaunchScreen.storyboard */,
 				E42CD43127B468CA00342AB4 /* Fonts */,
 				E42CD42727B463C500342AB4 /* Info.plist */,
+				E48F827C2812341400822308 /* FavoritesCell.swift */,
 			);
 			path = Picturys;
 			sourceTree = "<group>";
@@ -181,10 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E46CE72727E2876200C80823 /* CameraViewController.swift in Sources */,
+				E48F827D2812341400822308 /* FavoritesCell.swift in Sources */,
 				E46948CF27BCD2F100302E43 /* DetailViewController.swift in Sources */,
 				E49A503527BC873000A1C0FE /* GalleryCVController.swift in Sources */,
 				E46948CD27BCC36400302E43 /* TabBarController.swift in Sources */,
 				E401E01A27BCA87D0072C2BF /* CollectionRV.swift in Sources */,
+				E48F827B2812329500822308 /* FavoritesCVController.swift in Sources */,
 				E4482B2227E18D89009C307C /* dataHandler.swift in Sources */,
 				E49A503727BC877C00A1C0FE /* GalleryCell.swift in Sources */,
 				E42CD41A27B463C400342AB4 /* AppDelegate.swift in Sources */,

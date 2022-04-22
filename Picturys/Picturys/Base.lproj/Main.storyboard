@@ -238,37 +238,69 @@
         <!--Favorites-->
         <scene sceneID="1RN-Ef-eU7">
             <objects>
-                <collectionViewController id="5YT-Oh-F6A" sceneMemberID="viewController">
+                <collectionViewController id="5YT-Oh-F6A" customClass="FavoritesCVController" customModule="Picturys" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="S31-f9-8B9">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.55294117649999996" green="0.77647058820000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hF3-Bw-RWK">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoriteCell" id="Mte-9T-nvj">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoriteCell" id="Mte-9T-nvj" customClass="FavoritesCell" customModule="Picturys" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cJe-HV-GOP">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vnO-Wg-Q0E">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vnO-Wg-Q0E" firstAttribute="leading" secondItem="cJe-HV-GOP" secondAttribute="leading" id="3oJ-OZ-JyG"/>
+                                        <constraint firstAttribute="trailing" secondItem="vnO-Wg-Q0E" secondAttribute="trailing" id="Ero-iY-jzz"/>
+                                        <constraint firstAttribute="bottom" secondItem="vnO-Wg-Q0E" secondAttribute="bottom" id="QtK-dq-FfG"/>
+                                        <constraint firstItem="vnO-Wg-Q0E" firstAttribute="top" secondItem="cJe-HV-GOP" secondAttribute="top" id="xvS-yQ-Ops"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="showImageFav" destination="vnO-Wg-Q0E" id="GeV-r1-MxZ"/>
+                                    <segue destination="bHx-55-mT6" kind="show" identifier="detailSegue2" id="643-tI-bnl"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="favoriteheader" id="41H-dL-kiU" customClass="CollectionRV" customModule="Picturys" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VqJ-EN-oi7" userLabel="favoritesHeaderLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="ArchivoBlack-Regular" family="Archivo Black" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <connections>
+                                <outlet property="favoritesHeaderlabel" destination="VqJ-EN-oi7" id="pOA-Y7-rjD"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="5YT-Oh-F6A" id="dAa-RY-GS0"/>
                             <outlet property="delegate" destination="5YT-Oh-F6A" id="J6Y-3C-Nb7"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="star.leadinghalf.filled" catalog="system" id="ilD-CI-YZd"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="xBo-FE-fsw"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh9-Ln-1z1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230" y="775"/>
+            <point key="canvasLocation" x="1785.9813084112147" y="1039.3088552915767"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="VGS-Gn-SBb">
@@ -392,15 +424,16 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5o-V4-kun">
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="27.333333333333332"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArchivoBlack-Regular" family="Archivo Black" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4n-bv-Y7Z">
-                                        <rect key="frame" x="0.0" y="35.333333333333314" width="408" height="551.66666666666674"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="408" height="587"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gzl-LI-uU5">
-                                                <rect key="frame" x="20" y="20.000000000000028" width="368" height="511.66666666666674"/>
+                                                <rect key="frame" x="20" y="20" width="368" height="547"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -494,7 +527,7 @@
                     <connections>
                         <segue destination="FhC-Kc-gkq" kind="relationship" relationship="viewControllers" destinationCreationSelector="gallerySegue" id="GiP-H8-TYq"/>
                         <segue destination="SHd-K9-SVj" kind="relationship" relationship="viewControllers" id="s2g-eB-uoU"/>
-                        <segue destination="5YT-Oh-F6A" kind="relationship" relationship="viewControllers" id="hbO-vN-8VU"/>
+                        <segue destination="vlc-Tr-6Tv" kind="relationship" relationship="viewControllers" id="hbO-vN-8VU"/>
                         <segue destination="PTM-Zr-mbU" kind="relationship" relationship="viewControllers" id="XT5-SR-mlP"/>
                     </connections>
                 </tabBarController>
@@ -522,8 +555,28 @@
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="-503.57142857142856"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="DZV-Yk-HVc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vlc-Tr-6Tv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.leadinghalf.filled" catalog="system" id="ilD-CI-YZd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tyq-SK-eTn">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5YT-Oh-F6A" kind="relationship" relationship="rootViewController" id="cnh-ZS-FX4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioB-mN-Mtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.98130841121485" y="1039.9568034557235"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="643-tI-bnl"/>
         <segue reference="XT5-SR-mlP"/>
     </inferredMetricsTieBreakers>
     <resources>
