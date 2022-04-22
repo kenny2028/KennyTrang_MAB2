@@ -150,7 +150,10 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         dateLabel.text = "\(formatter.string(from: date))"
         
         //uploadedImage.image = UIImage(named: "mtn.jpg")
-        uploadedImage.image = imageAdd
+        if (imageAdd != nil) {
+            uploadedImage.image = imageAdd
+        }
+     
         print("tEsteer")
        
         

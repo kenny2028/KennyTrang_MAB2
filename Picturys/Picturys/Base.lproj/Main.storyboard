@@ -494,7 +494,13 @@
                             <constraint firstItem="Cg9-En-xSd" firstAttribute="top" secondItem="ybu-VQ-KmT" secondAttribute="top" id="sUS-2t-Gea"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Picture Details" id="bTX-BZ-aKP"/>
+                    <navigationItem key="navigationItem" title="Picture Details" id="bTX-BZ-aKP">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" id="XkM-Dy-Xal">
+                            <connections>
+                                <action selector="shareButton:" destination="bHx-55-mT6" id="uEq-7M-TaH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="P5o-V4-kun" id="cBi-9s-LBA"/>
                         <outlet property="imageShow" destination="gzl-LI-uU5" id="X9X-s4-5Bz"/>
@@ -586,6 +592,7 @@
         <image name="cameraInActive" width="100" height="100"/>
         <image name="imageselect" width="50" height="50"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.leadinghalf.filled" catalog="system" width="128" height="116"/>
         <image name="starInActive" width="40" height="38"/>
         <image name="uploadImage" width="122" height="123"/>
